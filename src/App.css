@@ -1,0 +1,60 @@
+ .navbarrr{
+   display: flex ; 
+   /* justify-content: center; */
+}
+ .nr{
+   display: flex;
+ }
+ .input-group{
+  width: 29%;
+ }
+ 
+ /* .navrate{
+ display: flex;  
+} */
+ .custom-card{
+   border-top:3px solid  ;
+ }
+hr{
+  border-top:5px solid black;
+}
+ h5{
+   font-size: medium;
+ }
+
+ img{
+  width: 38%; 
+  margin-top: 10px;
+ }
+
+ .cards{
+    display: flex;
+    flex-wrap: wrap;
+  } 
+
+.card{
+  flex-direction: column;
+  width: 31%;  margin : auto;
+  justify-content: space-between;
+  align-items: center;
+
+  border: 3px solid;
+} 
+
+
+.naarach {
+  padding: 6px 5%;
+  margin: 0 41%;
+}
+.custom-image{
+  width: 64%;
+  height: 299px;
+}
+.rated{
+  position: absolute;
+  margin-left: 38%;
+  margin-top: -18px;
+}
+.rate{
+  margin-left: 60%;
+}
