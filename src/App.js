@@ -4,6 +4,7 @@ import Movielist from './component/Movielist';
 import Header from './component/Header';
 import AddModal from './component/AddModal';
 
+
 class App extends Component {
   constructor(props){
     super(props);
@@ -26,8 +27,10 @@ class App extends Component {
         }
       ],
       newRating: 1,
-      newtext:''
+      newtext:'',
+      isLoading:true
     }
+    setTimeout(() => this.setState({loading: false}), 5000)
   }
   giveText = t =>{
     this.setState({newtext: t})
@@ -35,17 +38,18 @@ class App extends Component {
   addNewmovie=(movie)=>{
    this.setState({movies:this.state.movies.concat(movie)})
   }
-
+  
 
   giveRate = x => {
     this.setState({newRating: x})
   }
   render() {
+    
     return (
       <div className="navrate">
         <Header rate={this.state.newRating} giveNewRate={rate => this.giveRate(rate)}  title={this.state.newtext} giveNewtext={ title=>this.giveText(title)}/>
         <AddModal addMovie={movie=>this.addNewmovie(movie)}/>
-        <Movielist movies={this.state.movies.filter(el => el.count >= this.state.newRating && el.title.toUpperCase().includes(this.state.newtext.toUpperCase().trim()))}/>      </div>
+        <Movielist  isLoading={this.state.isLoading}  movies={this.state.movies.filter(el => el.count >= this.state.newRating && el.title.toUpperCase().includes(this.state.newtext.toUpperCase().trim()))}/>      </div>
     )
   }
 }

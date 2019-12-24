@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import MovieCard from './MovieCard'
+import Hoc from './Hoc'
 
-export class Movielist extends Component {
+
+ class Movielist extends Component {
     render() {
         return (
             <div className="cards">
@@ -11,4 +13,4 @@ export class Movielist extends Component {
     }
 }
 
-export default Movielist
+export default Hoc(Movielist)
